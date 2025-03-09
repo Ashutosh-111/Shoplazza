@@ -1,6 +1,7 @@
 import './App.css';
+import Card from './components/Card/Card';
 import NavBar from './layouts/NavigationBar/NavBar';
-import About from './pages/HomePage/About/About';
+// import About from './pages/HomePage/About/About';
 import Home from './pages/HomePage/Home';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 

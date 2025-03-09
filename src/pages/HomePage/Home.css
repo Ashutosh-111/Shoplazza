@@ -1,41 +1,79 @@
-.content{
-    position: absolute;
-    left: 10%;
-    top: 20%;
+.content {
+  position: absolute;
+  left: 10%;
+  top: 20%;
 }
+
 .heading1 {
-
-    font-size: xxx-large;
-
+  font-size: xxx-large;
 }
-
 
 .heading2 {
-    
-    font-size: xx-large;
+  font-size: xx-large;
+}
+
+.parallax {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: #f0f0f0;
+  z-index: -1;
 }
 
 .banner_container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-  }
-  
-  /* Make the image cover the full container while maintaining aspect ratio */
-  .banner_image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center center;
-  }
-  
-  /* Content styling */
-  /* .content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-  } */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/images/banner2.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  /* This creates the parallax effect */
+  background-repeat: no-repeat;
+  z-index: -2;
+  /* Place the background behind everything */
+}
+
+/* Make the image cover the full container while maintaining aspect ratio */
+.banner_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.abc {
+  height: 1000px;
+  background-color: red;
+  font-size: 36px
+}
+
+
+.card_section {
+  display: flex;
+  justify-content: center;
+  /* Center the cards */
+  gap: 20px;
+  margin: 2% 10%;
+  flex-wrap: wrap;
+}
+
+.product-catalog {
+  margin-top: 10%;
+  background-color: #f5f7f9;
+}
+
+.catalog-heading {
+  font-size: 40px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.catalog-cards {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}

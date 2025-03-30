@@ -1,7 +1,8 @@
 import { Button } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import NavBar from '../../layouts/NavigationBar/NavBar';
-import banner2 from '../../assets/images/banner2.jpg'
+import bannerImage1 from '../../assets/images/banner2.jpg';
+import bannerImage2 from '../../assets/banner/banner-03.jpg';
 import card1 from '../../assets/images/women-fashion-free-img.jpg';
 import card2 from '../../assets/images/men-fashion-free-img.jpg';
 import card3 from '../../assets/images/footwear-free-img.jpg';
@@ -15,10 +16,12 @@ import product7 from '../../assets/product card images/product-w-jeans1-400x400.
 import product8 from '../../assets/product card images/product-w-jeans2-400x400.jpg'
 import product9 from '../../assets/product card images/product-w-jeans4-400x400.jpg'
 import product10 from '../../assets/product card images/sports-shoe1-400x400.jpg'
-// import './Card.css'
+import PublicIcon from '@mui/icons-material/Public'; // Import the icon
 import './Home.css'
 import Card from '../../components/Card/Card';
 import ProductCard from '../../components/ProductCard/ProductCard';
+import Banner from '../../components/Banner/Banner';
+import Feature from '../../components/Feature/Feature';
 
 const Home = () => {
 
@@ -28,18 +31,7 @@ const Home = () => {
     <div>
       <NavBar />
       {/* Parallax Scrolling */}
-      <div className='parallax'>
-        <div className="banner_container">
-       
-        </div>
-      </div>
-
-      <div className='content'>
-        <p className='heading1'>Raining Offers For Hot Summer!</p>
-        <p className='heading2'>25% Off On All Products</p>
-        <Button variant="contained">SHOP NOW</Button>
-        <Button variant="outlined">FIND MORE</Button>
-      </div>
+      <Banner image={bannerImage1} heading='Raining Offers for Hot Summers' subheading='25% of on all products' prm_btn='SHOP NOW' sec_btn='FIND MORE' />
 
       <div className="card_section">
         <Card image={card1} title='image1' />
@@ -61,6 +53,23 @@ const Home = () => {
           <ProductCard image={product10} title='DNK Blue Shoes' price='100' rating='5' />
         </div>
       </div>
+
+      <div className='banner'>
+        <Banner image={bannerImage2} heading='Special Edition' subheading='Buy This T-shirt At 20% Discount, Use Code OFF20' prm_btn='SHOP NOW' />
+      </div>
+
+      <div className='features'>
+        <Feature icon={PublicIcon} heading='Worldwide Shipping' description='It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.' />
+
+        <Feature icon={PublicIcon} heading='Worldwide Shipping' description='It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.' />
+
+        <Feature icon={PublicIcon} heading='Worldwide Shipping' description='It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.' />
+
+        <Feature icon={PublicIcon} heading='Worldwide Shipping' description='It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.' />
+
+
+      </div>
+
 
     </div>
 

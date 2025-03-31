@@ -1,0 +1,34 @@
+.sign-in{
+    border: 1px solid black;
+    border-radius: 25px;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 35%;
+    margin-right: 35%;
+    padding: 2%;
+    margin-top: 2%;
+}
+
+.email-input, .password-input{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* height: 100px !important; */
+    margin-top: 10px;
+}
+.css-16wblaj-MuiInputBase-input-MuiOutlinedInput-input{
+    height: 10px !important;
+}
+.submit{
+    width: 100%;
+}
+.error{
+    color: red;
+    font-size: 10px;
+}
+.fgt-pwd{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -10,8 +10,10 @@ const Banner = (props) => {
                     <div className='content'>
                         <p className='heading1'>{props.heading}</p>
                         <p className='heading2'>{props.subheading}</p>
-                        <Button variant="contained">{props.prm_btn}</Button>
-                        <Button variant="outlined">{props.sec_btn}</Button>
+                        <div className='action-buttons'>
+                            <Button variant="contained">{props.prm_btn}</Button>
+                            <Button variant="outlined">{props.sec_btn}</Button>
+                        </div>
                     </div>
                 </div>
             </div>

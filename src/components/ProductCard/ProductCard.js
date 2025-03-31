@@ -10,7 +10,7 @@ import { Rating } from '@mui/material';
 const ProductCard = (props) => {
     return (
         <div>
-            <Card className='product-card'>
+            <Card className='product-card' onClick={props.onClick} style={{ cursor: 'pointer' }}>
                 <CardContent>
                   <img className='product-card-image' src={props.image}/>
                   <p>{props.title}</p>

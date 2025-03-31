@@ -1,5 +1,5 @@
+import React, { useEffect, useState, useRef } from 'react'
 import { Button } from '@mui/material'
-import React, { useEffect, useState } from 'react'
 import NavBar from '../../layouts/NavigationBar/NavBar';
 import bannerImage1 from '../../assets/images/banner2.jpg';
 import bannerImage2 from '../../assets/banner/banner-03.jpg';
@@ -22,14 +22,35 @@ import Card from '../../components/Card/Card';
 import ProductCard from '../../components/ProductCard/ProductCard';
 import Banner from '../../components/Banner/Banner';
 import Feature from '../../components/Feature/Feature';
+import Footer from '../../layouts/Footer/Footer';
+import ProductModal from './product-modal';
 
 const Home = () => {
+
+  const modalRef = useRef(null);
+
+  const [openModal, setOpenModal] = useState(false); // State for modal
+
+  const [productDetails, setProductDetails] = useState({title: '', price: '', image: '', rating: ''});
+
+
+
+  
+  const handleOpen = (title, image, price, rating) => {
+    setProductDetails({title, price, image, rating});
+    console.log('open working');
+    // setOpenModal(true); // Open the modal when a product card is clicked
+    if(modalRef.current){
+      modalRef.current.open();
+    }
+
+  }
 
 
 
   return (
     <div>
-      <NavBar />
+      {/* <NavBar /> */}
       {/* Parallax Scrolling */}
       <Banner image={bannerImage1} heading='Raining Offers for Hot Summers' subheading='25% of on all products' prm_btn='SHOP NOW' sec_btn='FIND MORE' />
 
@@ -42,15 +63,15 @@ const Home = () => {
       <div className='product-catalog'>
         <div className='catalog-heading'>Featured Products</div>
         <div className='catalog-cards'>
-          <ProductCard image={product2} title='Boho Bangle Braclet' price='100' rating='4' />
-          <ProductCard image={product3} title='Anchor Bracelet' price='100' rating='5' />
-          <ProductCard image={product4} title='Light Brown Purse' price='100' rating='4.5' />
-          <ProductCard image={product5} title='Bright Red Bag' price='100' rating='4' />
-          <ProductCard image={product6} title='Dark Brown Jeans' price='100' rating='4.5' />
-          <ProductCard image={product7} title='Blue Denim Shorts' price='100' rating='4.5' />
-          <ProductCard image={product8} title='Blue Denim Jeans' price='100' rating='4.5' />
-          <ProductCard image={product9} title='Basic Grey Jeans' price='100' rating='4' />
-          <ProductCard image={product10} title='DNK Blue Shoes' price='100' rating='5' />
+          <ProductCard image={product2} title='Boho Bangle Braclet' price='100' rating='4' onClick={() => handleOpen('Boho Bangle Braclet',product2, '100', '4')}/>
+          <ProductCard image={product3} title='Anchor Bracelet' price='100' rating='5' onClick={() => handleOpen('Anchor Bracelet', product3, '100', "4.5")}/>
+          <ProductCard image={product4} title='Light Brown Purse' price='100' rating='4.5' onClick={() => handleOpen('Light Brown Purse', product4, '100', '4.5')}/>
+          <ProductCard image={product5} title='Bright Red Bag' price='100' rating='4' onClick={() => handleOpen('Bright Red Bag', product5, '100', '4.5')}/>
+          <ProductCard image={product6} title='Dark Brown Jeans' price='100' rating='4.5' onClick={() => handleOpen('Dark Brown Jeans', product6, '100', '4.5')}/>
+          <ProductCard image={product7} title='Blue Denim Shorts' price='100' rating='4.5' onClick ={() => handleOpen('Blue Denim Shorts', product7, '100', '4.5')}/>
+          <ProductCard image={product8} title='Blue Denim Jeans' price='100' rating='4.5' onClick={() => handleOpen('Blue Denim Jeans', product8, '100', '4.5')}/>
+          <ProductCard image={product9} title='Basic Grey Jeans' price='100' rating='4' onClick={() => handleOpen('Basic Grey Jeans', product9, '100', '4')}/>
+          <ProductCard image={product10} title='DNK Blue Shoes' price='100' rating='5' onClikc={() => handleOpen('DNK Blue Shoes', product10, '100', '5')}/>
         </div>
       </div>
 
@@ -58,17 +79,21 @@ const Home = () => {
         <Banner image={bannerImage2} heading='Special Edition' subheading='Buy This T-shirt At 20% Discount, Use Code OFF20' prm_btn='SHOP NOW' />
       </div>
 
-      <div className='features'>
-        <Feature icon={PublicIcon} heading='Worldwide Shipping' description='It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.' />
+      <div className='product-catalog'>
+        <div className='features'>
+          <Feature icon={PublicIcon} heading='Worldwide Shipping' description='It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.' />
 
-        <Feature icon={PublicIcon} heading='Worldwide Shipping' description='It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.' />
+          <Feature icon={PublicIcon} heading='Worldwide Shipping' description='It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.' />
 
-        <Feature icon={PublicIcon} heading='Worldwide Shipping' description='It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.' />
+          <Feature icon={PublicIcon} heading='Worldwide Shipping' description='It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.' />
 
-        <Feature icon={PublicIcon} heading='Worldwide Shipping' description='It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.' />
+          <Feature icon={PublicIcon} heading='Worldwide Shipping' description='It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.' />
 
+        </div>
+        <ProductModal open={false} ref={modalRef} image={productDetails.image} price={productDetails.price} rating={productDetails.rating} title={productDetails.title} />
 
       </div>
+      {/* <Footer /> */}
 
 
     </div>

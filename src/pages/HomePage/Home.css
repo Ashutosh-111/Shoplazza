@@ -58,5 +58,16 @@
 }
 
 .second-half{
-
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px
 }
+
+.product-name, .price{
+  margin: 2% !important;
+}
+.add-to-cart{
+  margin-top: 30px !important;
+}
+

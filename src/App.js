@@ -6,6 +6,7 @@ import Home from './pages/HomePage/Home';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Login from './pages/Login/Login';
 import About from './pages/About/About';
+import Products from './pages/Products/Products';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function MainContent() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/about" element={<About />} />
+        <Route path="/products" element={<Products />} />
 
       </Routes>
 

@@ -32,7 +32,7 @@ const Login = () => {
                 <h2>Sign In</h2>
                 <div className='email-input'>
                     <label className='email-label'>Email</label>
-                    <TextField className='email'placeholder="Enter email..."{...register("email", {
+                    <TextField className='email' placeholder="Enter email..."{...register("email", {
                         required: "Email is required",
                         pattern: {
                             value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
@@ -58,7 +58,7 @@ const Login = () => {
                 <Button variant="text">Forgot your password?</Button>
                 <Button variant="text">Don't have an account? Sign Up</Button>
 
-                    
+
             </form>
         </div>
     )

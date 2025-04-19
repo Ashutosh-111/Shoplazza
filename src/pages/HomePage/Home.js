@@ -31,16 +31,16 @@ const Home = () => {
 
   const [openModal, setOpenModal] = useState(false); // State for modal
 
-  const [productDetails, setProductDetails] = useState({title: '', price: '', image: '', rating: ''});
+  const [productDetails, setProductDetails] = useState({ title: '', price: '', image: '', rating: '' });
 
 
 
-  
+
   const handleOpen = (title, image, price, rating) => {
-    setProductDetails({title, price, image, rating});
+    setProductDetails({ title, price, image, rating });
     console.log('open working');
     // setOpenModal(true); // Open the modal when a product card is clicked
-    if(modalRef.current){
+    if (modalRef.current) {
       modalRef.current.open();
     }
 
@@ -63,15 +63,15 @@ const Home = () => {
       <div className='product-catalog'>
         <div className='catalog-heading'>Featured Products</div>
         <div className='catalog-cards'>
-          <ProductCard image={product2} title='Boho Bangle Braclet' price='100' rating='4' onClick={() => handleOpen('Boho Bangle Braclet',product2, '100', '4')}/>
-          <ProductCard image={product3} title='Anchor Bracelet' price='100' rating='5' onClick={() => handleOpen('Anchor Bracelet', product3, '100', "4.5")}/>
-          <ProductCard image={product4} title='Light Brown Purse' price='100' rating='4.5' onClick={() => handleOpen('Light Brown Purse', product4, '100', '4.5')}/>
-          <ProductCard image={product5} title='Bright Red Bag' price='100' rating='4' onClick={() => handleOpen('Bright Red Bag', product5, '100', '4.5')}/>
-          <ProductCard image={product6} title='Dark Brown Jeans' price='100' rating='4.5' onClick={() => handleOpen('Dark Brown Jeans', product6, '100', '4.5')}/>
-          <ProductCard image={product7} title='Blue Denim Shorts' price='100' rating='4.5' onClick ={() => handleOpen('Blue Denim Shorts', product7, '100', '4.5')}/>
-          <ProductCard image={product8} title='Blue Denim Jeans' price='100' rating='4.5' onClick={() => handleOpen('Blue Denim Jeans', product8, '100', '4.5')}/>
-          <ProductCard image={product9} title='Basic Grey Jeans' price='100' rating='4' onClick={() => handleOpen('Basic Grey Jeans', product9, '100', '4')}/>
-          <ProductCard image={product10} title='DNK Blue Shoes' price='100' rating='5' onClikc={() => handleOpen('DNK Blue Shoes', product10, '100', '5')}/>
+          <ProductCard id="001" image={product2} title='Boho Bangle Braclet' price='100' rating='4' onClick={() => handleOpen('Boho Bangle Braclet', product2, '100', '4')} />
+          <ProductCard id="002" image={product3} title='Anchor Bracelet' price='100' rating='5' onClick={() => handleOpen('Anchor Bracelet', product3, '100', "4.5")} />
+          <ProductCard id="003" image={product4} title='Light Brown Purse' price='100' rating='4.5' onClick={() => handleOpen('Light Brown Purse', product4, '134', '4.5')} />
+          <ProductCard id="004" image={product5} title='Bright Red Bag' price='100' rating='4' onClick={() => handleOpen('Bright Red Bag', product5, '100', '4.5')} />
+          <ProductCard id="005" image={product6} title='Dark Brown Jeans' price='100' rating='4.5' onClick={() => handleOpen('Dark Brown Jeans', product6, '100', '4.5')} />
+          <ProductCard id="006" image={product7} title='Blue Denim Shorts' price='100' rating='4.5' onClick={() => handleOpen('Blue Denim Shorts', product7, '100', '4.5')} />
+          <ProductCard id="007" image={product8} title='Blue Denim Jeans' price='100' rating='4.5' onClick={() => handleOpen('Blue Denim Jeans', product8, '100', '4.5')} />
+          <ProductCard id="008" image={product9} title='Basic Grey Jeans' price='100' rating='4' onClick={() => handleOpen('Basic Grey Jeans', product9, '100', '4')} />
+          <ProductCard id="009" image={product10} title='DNK Blue Shoes' price='100' rating='5' onClick={() => handleOpen('DNK Blue Shoes', product10, '100', '5')} />
         </div>
       </div>
 
